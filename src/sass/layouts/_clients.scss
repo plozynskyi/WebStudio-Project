@@ -1,0 +1,52 @@
+.clients__title--bottom {
+  margin-bottom: 30px;
+  @include font(700, 28, 1.18, 0.03);
+  @include desktop {
+    margin-bottom: 50px;
+    @include font(700, 36, 1.17, 0.03);
+  }
+}
+
+.company {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap-size);
+}
+
+.company__item {
+  flex-basis: calc((100% - var(--gap-size)) / 2);
+  @include tablet {
+    flex-basis: calc((100% - var(--gap-size) * 2) / 3);
+  }
+  @include desktop {
+    flex-basis: calc((100% - var(--gap-size) * 5) / 6);
+  }
+}
+
+.company__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: transparent;
+  min-height: 92px;
+  color: var(--social-link-color);
+  background-color: var(--page-bg-color);
+  border: 1px solid var(--social-link-color);
+  border-radius: 4px;
+  transition: var(--transition-border), var(--transition-color);
+  &:hover,
+  &:focus {
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+  }
+}
+
+.company__logo {
+  fill: currentColor;
+  transition: var(--transition-fill);
+  .clients-list-item:hover &,
+  .clients-list-item:focus & {
+    fill: var(--accent-color);
+  }
+}

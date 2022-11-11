@@ -1,0 +1,35 @@
+.logo {
+  color: var(--logo-color-text);
+  font-family: var(--secondery-font);
+  @include font(700, 26, 1.19, 0.03);
+  transition: var(--transition-color);
+  @include mobile {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  &:hover,
+  &:focus {
+    color: var(--logo-accent-color);
+    outline: transparent;
+  }
+}
+
+.logo__colorized {
+  color: var(--accent-color);
+  transition: var(--transition-color);
+  .logo:hover &,
+  .logo:focus &,
+  .footer__logo:hover &,
+  .footer__logo:focus & {
+    color: var(--logo-accent-color);
+    outline: transparent;
+  }
+}
+
+.footer__logo {
+  display: inline-block;
+  padding: 0;
+  margin-bottom: 20px;
+  color: var(--white-text-color);
+  @include font(700, 24, 1.17, 0.03);
+}

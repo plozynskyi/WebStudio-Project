@@ -1,0 +1,268 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+  transition: var(--transition-transform), var(--transition-opacity);
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1);
+    transition: var(--transition-transform), var(--transition-opacity);
+    .modal__window {
+      transform: scale(1) translate(-50%, -50%);
+      transition: var(--transition-transform), var(--transition-opacity);
+    }
+  }
+}
+
+.modal__window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  padding: 20px;
+  background-color: var(--page-bg-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  @include mobile {
+    width: 450px;
+    padding: 40px;
+  }
+  @include tablet {
+    padding: 40px;
+  }
+  @include desktop {
+    width: 528px;
+    height: 581px;
+    padding: 40px;
+  }
+}
+
+.modal__title {
+  display: block;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  @include font(700, 15, 1, 0.03);
+  color: var(--primary-text-color);
+  @include mobile {
+    @include font(700, 20, 1.5, 0.03);
+  }
+  @include tablet {
+  }
+  @include desktop {
+    @include font(700, 20, 1.15, 0.03);
+  }
+}
+
+.modal__form {
+  height: 100%;
+  width: 100%;
+}
+
+.modal__input {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  padding: 12px 12px 12px 42px;
+  @include font(null, 14, 1.14, 0.01);
+  color: var(--modal-input-color-);
+  transition: var(--transition-border-color);
+  &:hover,
+  &:focus {
+    outline: transparent;
+    border-color: var(--accent-color);
+  }
+  .modal__field:hover + &,
+  .modal__field:focus + & {
+    border-color: var(--accent-color);
+  }
+}
+
+.wrap {
+  position: relative;
+}
+
+.wrap__icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translatey(-50%);
+  transition: var(--transition-fill);
+  .modal__input:hover + &,
+  .modal__input:focus + & {
+    fill: var(--accent-color);
+  }
+}
+
+.modal__label {
+  display: block;
+  margin-bottom: 4px;
+  padding: 0;
+  @include font(null, 12, 1.17, 0.01);
+  color: var(--secondery-text-color);
+}
+
+.modal__field {
+  margin-bottom: 10px;
+}
+
+.modal__field-text {
+  margin-bottom: 20px;
+}
+
+.modal__text {
+  width: 100%;
+  height: 60px;
+  padding: 12px 16px;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: transparent;
+  @include font(null, 14, 1.14, 0.01);
+  color: rgba(117, 117, 117);
+  transition: var(--transition-border-color);
+  @include mobile {
+    height: 120px;
+  }
+  @include tablet {
+    height: 120px;
+  }
+  @include desktop {
+    height: 120px;
+  }
+  &:focus,
+  &:hover {
+    border-color: var(--accent-color);
+  }
+  &::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+  }
+  .modal__label:focus & {
+    border: 1px solid var(--accent-color);
+    outline: transparent;
+    font-family: inherit;
+    opacity: 1;
+  }
+}
+
+.modal__group {
+  margin-bottom: 30px;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  @include font(null, 8, 1.17, 0.03);
+  color: var(--secondery-text-color);
+  margin: 0;
+  padding: 0;
+  transition: var(--transition-color);
+  @include mobile {
+    @include font(null, 12, 1.17, 0.03);
+  }
+  @include tablet {
+    @include font(null, 12, 1.17, 0.03);
+  }
+  @include desktop {
+    @include font(null, 14, 1.71, 0.03);
+  }
+
+  .check__icon {
+    display: inline-block;
+    fill: transparent;
+    transition: var(--transition-fill);
+    .check:checked + & {
+      fill: var(--white-text-color);
+      transition: var(--transition-fill);
+    }
+  }
+
+  .check__offer {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    @include font(null, 8, 1.17, 0.03);
+    color: var(--accent-color);
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      bottom: 1px;
+      background-color: var(--accent-color);
+      @include tablet {
+        bottom: 5px;
+      }
+      @include desktop {
+        bottom: 4px;
+      }
+    }
+    @include mobile {
+      @include font(null, 12, 1.17, 0.03);
+    }
+    @include tablet {
+      @include font(null, 12, 1.71, 0.03);
+    }
+    @include desktop {
+      @include font(null, 14, 1.71, 0.03);
+    }
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--primary-text-color);
+    border-radius: 2px;
+    transition: var(--transition-color);
+    .check:checked + & {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+    .check:focus + & {
+      border-color: var(--accent-color);
+    }
+    .check:hover + & {
+      border-color: var(--accent-color);
+    }
+  }
+}
+
+.modal__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  color: var(--logo-color-text);
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: var(--transition-fill), var(--transition-border);
+  border-radius: 50%;
+  cursor: pointer;
+  outline: transparent;
+  &:hover,
+  &:focus {
+    fill: var(--accent-color);
+    border: 1px solid var(--accent-color);
+  }
+}

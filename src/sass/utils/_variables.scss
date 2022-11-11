@@ -1,0 +1,33 @@
+:root {
+  --primary-font: 'Roboto', sans-serif;
+  --secondery-font: 'Raleway', sans-serif;
+  --primary-text-color: #212121;
+  --logo-color-text: #000000;
+  --secondery-text-color: #757575;
+  --white-text-color: #ffffff;
+  --accent-color: #2196f3;
+  --button-color-accent: #188ce8;
+  --button-color: #ffffff;
+  --contact-color: rgba(255, 255, 255, 0.6);
+  --hero-color-bg: #c4c4c4;
+  --page-bg-color: #ffffff;
+  --team-bg-color: #f5f4fa;
+  --footer-bg-color: #2f303a;
+  --border-color-white: #eeeeee;
+  --button-filter-bg-color: #f5f4fa;
+  --logo-accent-color: #00f8d0;
+  --hedaer-line-color: #ececec;
+  --feature-icon-bg-color: #f5f4fa;
+  --modal-input-color-: #555555;
+  --social-link-color: #afb1b8;
+  --social-link-bg-color: rgba(255, 255, 255, 0.1);
+  --gap-size: 30px;
+  --transition-fill: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-color: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-opacity: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-transform: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-background-color: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-border: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-border-color: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-box-shadow: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}

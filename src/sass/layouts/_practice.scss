@@ -1,0 +1,42 @@
+.practice {
+  display: none;
+  @include desktop {
+    display: inherit;
+  }
+}
+
+.practice__title--bottom {
+  margin-bottom: 50px;
+}
+
+.practice__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-size);
+}
+
+.practice__item {
+  flex-basis: calc((100% - var(--gap-size) * 2) / 3);
+  position: relative;
+  &::before {
+    position: absolute;
+    content: '';
+    display: flex;
+    height: 70px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(47, 48, 58, 0.8);
+  }
+}
+
+.thumb__text {
+  position: absolute;
+  bottom: 27px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.practice__pre-title--position-center {
+  text-align: center;
+}

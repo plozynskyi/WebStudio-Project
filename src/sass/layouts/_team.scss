@@ -1,0 +1,76 @@
+.team {
+  background-color: var(--team-bg-color);
+}
+
+.team__title--bottem {
+  text-align: center;
+  @include font(700, 28, 1.18, 0.03);
+  margin-bottom: 30px;
+  @include desktop {
+    @include font(700, 36, 1.17, 0.03);
+    margin-bottom: 50px;
+  }
+}
+
+.team__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap-size);
+}
+
+.team__item {
+  background-color: var(--page-bg-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+  overflow: hidden;
+  flex-basis: 100%;
+  @include tablet {
+    flex-basis: calc((100% - var(--gap-size)) / 2);
+  }
+  @include desktop {
+    flex-basis: calc((100% - var(--gap-size) * 3) / 4);
+  }
+}
+
+.team__img {
+  max-width: 100%;
+  @include mobile {
+    max-width: 450px;
+  }
+  @include tablet {
+    min-width: 354px;
+  }
+  @include desktop {
+    min-width: 270px;
+  }
+}
+
+.team__thumb {
+  padding: 30px 0 24px;
+  max-width: 100%;
+  @include mobile {
+    max-width: 450px;
+  }
+  @include tablet {
+    max-width: 100%;
+  }
+  @include desktop {
+    max-width: 100%;
+    padding: 30px 0;
+  }
+}
+
+.team__employee {
+  margin-bottom: 10px;
+  text-align: center;
+  @include font(500, 16, 1.19, 0.03);
+}
+
+.team__text {
+  margin-bottom: 16px;
+  text-align: center;
+  color: var(--secondery-text-color);
+  @include font(null, 16, 1.19, 0.03);
+}

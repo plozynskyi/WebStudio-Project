@@ -1,0 +1,16 @@
+.title {
+  text-align: center;
+  @include font(700, 36, 1.17, 0.03);
+  color: var(--primary-text-color);
+}
+
+.pre-title {
+  @include font(700, 14, 1.14, 0.03);
+  text-transform: uppercase;
+  &--color-black {
+    color: var(--primary-text-color);
+  }
+  &--color-white {
+    color: var(--white-text-color);
+  }
+}
